@@ -32,6 +32,8 @@ dotnet restore
 4. Ejecuta la aplicación en el emulador o dispositivo físico.
 
 📦 Estructura del proyecto
+
+
 <img width="353" height="300" alt="image" src="https://github.com/user-attachments/assets/b092bb92-df44-4eba-be1f-e13423cbb5c8" />
 
 
