@@ -49,7 +49,3 @@ dotnet test
 Este proyecto está bajo la licencia MIT. Consulta el archivo LICENSE para más detalles.
 
 Desarrollado con ❤️ por jorgefdezsa
-
-¿Quieres que lo personalice con detalles específicos como el propósito del proyecto, dependencias concretas o capturas de pantalla?
-
-
