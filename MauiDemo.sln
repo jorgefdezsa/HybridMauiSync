@@ -1,0 +1,45 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.14.36511.14 d17.14
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MauiDemo", "MauiDemo\MauiDemo.csproj", "{86A54017-DE17-418B-9849-2BA7307AE1D7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Middleware.FX", "Middleware.FX\Middleware.FX.csproj", "{29CA9DE5-1C41-6FC0-4024-A2E92229FA38}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MauiDemo.AppHost", "MauiDemo.AppHost\MauiDemo.AppHost.csproj", "{3F4E1062-623E-4F45-A5CB-AD80E6A6A764}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MauiDemo.ServiceDefaults", "MauiDemo.ServiceDefaults\MauiDemo.ServiceDefaults.csproj", "{CB73160A-C86B-4A74-C40B-A191A75E5E87}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{86A54017-DE17-418B-9849-2BA7307AE1D7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{86A54017-DE17-418B-9849-2BA7307AE1D7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{86A54017-DE17-418B-9849-2BA7307AE1D7}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{86A54017-DE17-418B-9849-2BA7307AE1D7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{86A54017-DE17-418B-9849-2BA7307AE1D7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{86A54017-DE17-418B-9849-2BA7307AE1D7}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{29CA9DE5-1C41-6FC0-4024-A2E92229FA38}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{29CA9DE5-1C41-6FC0-4024-A2E92229FA38}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{29CA9DE5-1C41-6FC0-4024-A2E92229FA38}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{29CA9DE5-1C41-6FC0-4024-A2E92229FA38}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3F4E1062-623E-4F45-A5CB-AD80E6A6A764}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3F4E1062-623E-4F45-A5CB-AD80E6A6A764}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3F4E1062-623E-4F45-A5CB-AD80E6A6A764}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3F4E1062-623E-4F45-A5CB-AD80E6A6A764}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CB73160A-C86B-4A74-C40B-A191A75E5E87}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CB73160A-C86B-4A74-C40B-A191A75E5E87}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CB73160A-C86B-4A74-C40B-A191A75E5E87}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CB73160A-C86B-4A74-C40B-A191A75E5E87}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {6DDA0C5B-C6BB-4561-AEDF-7E1DBD9D080E}
+	EndGlobalSection
+EndGlobal

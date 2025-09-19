@@ -1,0 +1,110 @@
+﻿@* @page "/"
+
+<h1>Hello, world!</h1>
+
+Welcome to your new app. *@
+
+@page "/"
+@inject CountryService CountryService
+
+
+
+<div class="controls">
+    <input class="input" @bind="newCountryName" placeholder="Nombre del país" />
+    <button class="btn" @onclick="AddCountry">💾</button>
+    <button class="btn" @onclick="SyncAll">🔄</button>
+</div>
+
+<div class="sync-options">
+    <label>🌐 Conexión a Internet:</label>
+    <input type="checkbox" @bind="isOnline" />
+    <span>@(isOnline ? "Conectado" : "Sin conexión")</span>
+
+    <label>🔄 Sincronizar con:</label>
+    <select @bind="syncTarget">
+        <option value="sql">Azure SQL</option>
+        <option value="bus">Azure Service Bus</option>
+    </select>
+</div>
+
+<ul class="country-list">
+    @foreach (var country in countries)
+    {
+        <li class="item">
+            <span>@country.Name</span>
+            <span class="status">@((country.IsSynced ? "✔️" : "⏳"))</span>
+        </li>
+    }
+</ul>
+
+@code {
+    private string newCountryName = string.Empty;
+    private List<Country> countries = new();
+    private bool isOnline = true;
+    private string syncTarget = "sql";
+
+    protected override async Task OnInitializedAsync()
+    {
+        countries = await CountryService.GetAllAsync();
+    }
+
+    private async Task AddCountry()
+    {
+        if (string.IsNullOrWhiteSpace(newCountryName))
+            return;
+
+        var country = new Country { Name = newCountryName, Id = Guid.NewGuid() };
+
+        var existe = await CountryService.GetByNameAsync(newCountryName);
+
+        if (existe == null)
+        {
+            await CountryService.AddAsync(country);
+
+            if (isOnline)
+            {
+                if (syncTarget == "sql")
+                    await CountryService.SyncToSqlAsync(country);
+                else
+                    await CountryService.SyncToServiceBusAsync(country);
+            }
+        }
+        else
+        {
+            return;
+        }
+
+        countries = await CountryService.GetAllAsync();
+        newCountryName = string.Empty;
+    }
+
+    private async Task SyncAll()
+    {
+        var unsyncedCountries = await CountryService.GetUnsyncedAsync();
+
+        if (unsyncedCountries.Any())
+        {
+            if (isOnline)
+            {
+                foreach (var country in unsyncedCountries)
+                {
+                    if (syncTarget == "sql")
+                        await CountryService.SyncToSqlAsync(country);
+                    else
+                        await CountryService.SyncToServiceBusAsync(country);
+                }
+            }
+            else
+            {
+                return;
+            }
+        }
+        else
+        {
+            return;
+        }
+
+        countries = await CountryService.GetAllAsync();
+        newCountryName = string.Empty;
+    }
+}
